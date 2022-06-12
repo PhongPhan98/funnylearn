@@ -1,0 +1,56 @@
+<nz-layout>
+    <nz-header>
+      <div class="logo"></div>
+      <ul nz-menu nzTheme="dark" nzMode="horizontal" class="header-menu">
+        <li nz-menu-item nzSelected>Tôi học</li>
+      </ul>
+      <nz-mention [nzSuggestions]="suggestions" (nzOnSearchChange)="onSearchChange($event)" [nzPrefix]="['#', '@']">
+        <input
+          placeholder="Nhập từ khóa cần tìm kiếm!"
+          nzMentionTrigger
+          nz-input
+          [(ngModel)]="inputValue"
+        />
+      </nz-mention>s
+      <nz-badge [nzCount]="5" style="margin-right: 24px;">
+        <nz-avatar nzIcon="user" [nzShape]="'square'" (click) = "googleSignin()"></nz-avatar>
+      </nz-badge>
+    </nz-header>
+    <nz-layout>
+      <nz-sider nzWidth="270px" nzTheme="light">
+        <ul nz-menu nzMode="inline" class="sider-menu">
+          <li nz-submenu nzOpen nzIcon="laptop" nzTitle="Khóa học lập trình">
+            <ul>
+              <li nz-menu-item nzSelected>Angular</li>
+              <li nz-menu-item>ASP .NET</li>
+              <li nz-menu-item>Type Scripts</li>
+              <li nz-menu-item>Java</li>
+            </ul>
+          </li>
+          <li nz-submenu nzTitle="Học ngoại ngữ" nzIcon="book">
+            <ul>
+              <li nz-menu-item>Tiếng Anh</li>
+              <li nz-menu-item>Tiếng Nhật</li>
+              <li nz-menu-item>Tiếng Trung</li>
+            </ul>
+          </li>
+          <li nz-submenu nzTitle="Khóa học phát triển bản thân" nzIcon="notification">
+            <ul>
+              <li nz-menu-item>Kinh doanh</li>
+              <li nz-menu-item>Yoga</li>
+              <li nz-menu-item>Thiền</li>
+              <li nz-menu-item>Sách hay</li>
+            </ul>
+          </li>
+        </ul>
+      </nz-sider>
+      <nz-layout class="inner-layout">
+        <nz-breadcrumb>
+          <nz-breadcrumb-item>Home</nz-breadcrumb-item>
+          <nz-breadcrumb-item>List</nz-breadcrumb-item>
+          <nz-breadcrumb-item>App</nz-breadcrumb-item>
+        </nz-breadcrumb>
+        <nz-content>Content</nz-content>
+      </nz-layout>
+    </nz-layout>
+  </nz-layout>
